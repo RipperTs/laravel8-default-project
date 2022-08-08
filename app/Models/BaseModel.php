@@ -55,12 +55,6 @@ class BaseModel extends Model
         }
     }
 
-    public function scopeOfPE($query, $pro_id, $estate_id)
-    {
-        $where = ['pro_id' => $pro_id, 'estate_id' => $estate_id];
-        return $query->where($where);
-    }
-
     public function addAll(array $data)
     {
         $rs = DB::table($this->getTable())->insert($data);

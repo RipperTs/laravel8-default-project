@@ -32,6 +32,13 @@ abstract class BaseController extends Controller
     }
 
 
+    /**
+     * json格式数据
+     * @param $msg
+     * @param $code
+     * @param $data
+     * @return \Illuminate\Http\JsonResponse
+     */
     protected function resJson($msg, $code, $data)
     {
         $data = array('error_code' => $code, 'message' => $msg, 'data' => $data);

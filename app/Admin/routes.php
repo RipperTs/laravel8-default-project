@@ -13,5 +13,7 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index');
+    // 系统设置
+    $router->resource('setting', 'SettingController');
 
 });

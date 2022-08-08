@@ -69,13 +69,13 @@ class Handler extends ExceptionHandler
             Log::debug($message, $exceptionInfo);
             return response()->json(array_merge([
                 'error_code' => $error_code,
-                'message' => $message,
+                'message' => $message ?: '系统繁忙,请稍后再试~',
                 'data' => [],
             ], $exceptionInfo));
         }
         return response()->json([
             'error_code' => $error_code,
-            'message' => $message,
+            'message' => $message ?: '系统繁忙,请稍后再试~',
             'data' => [],
         ]);
     }

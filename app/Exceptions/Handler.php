@@ -50,7 +50,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $e)
     {
-        $exceptionInfo = ['file' => $e->getFile(), 'line' => $e->getLine(), 'trace' => $e->getTrace()];
+        $exceptionInfo = ['log_date' => date('Y-m-d H:i:s'), 'file' => $e->getFile(), 'line' => $e->getLine(), 'trace' => $e->getTrace()];
         $message = $e->getMessage();
         if ($e instanceof HttpException) { // abort 抛出的http异常
             $error_code = $e->getStatusCode();
